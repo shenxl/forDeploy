@@ -1,0 +1,32 @@
+{
+  "name": "user",
+  "base": "User",
+  "options": {
+    "idInjection": true,
+    "mysql": {
+      "table": "test_user"
+    }
+  },
+  "properties": {
+    "avatar": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "teams": {
+      "type": "hasMany",
+      "model": "team",
+      "foreignKey": "ownerId"
+    }
+  },
+  "acls": [
+    {
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "accessType": "READ",
+      "permission": "ALLOW"
+    }
+  ],
+  "methods": []
+}

@@ -1,0 +1,53 @@
+{
+  "name": "operationHistory",
+  "plural": "operationHistorys",
+  "base": "PersistedModel",
+  "options": {
+    "idInjection": true,
+    "mysql": {
+      "table": "operation_history"
+    }
+  },
+
+  "properties": {
+    "id": {
+      "type": "number",
+      "required": true
+    },
+    "user_id": {
+      "type": "number",
+      "required": true
+    },
+    "type": {
+      "type": "string",
+      "required": true
+    },
+    "table_name": {
+      "type": "string",
+      "required": true
+    },
+    "table_id": {
+      "type": "string",
+      "required": true
+    },
+    "field": {
+      "type": "string",
+      "required": true
+    },
+    "old_value": {
+      "type": "string"
+    },
+    "new_value": {
+      "type": "string"
+    },
+    "created_at": {
+      "type": "date"
+    }
+  },
+  "validations": [],
+  "relations": {
+
+  },
+  "acls": [],
+  "methods": {}
+}

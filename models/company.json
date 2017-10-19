@@ -1,0 +1,117 @@
+{
+  "name": "company",
+  "plural": "companies",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true,
+    "mysql": {
+      "table": "company"
+    }
+  },
+  "properties": {
+    "id": {
+      "type": "number",
+      "required": true
+    },
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "group_id": {
+      "type": "number"
+    },
+    "is_group": {
+      "type": "boolean"
+    },
+    "region": {
+      "type": "string"
+    },
+    "province": {
+      "type": "string"
+    },
+    "city": {
+      "type": "string"
+    },
+    "county": {
+      "type": "string"
+    },
+    "address": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string"
+    },
+    "industry": {
+      "type": "string"
+    },
+    "important": {
+      "type": "string"
+    },
+    "created_at": {
+      "type": "date"
+    },
+    "updated_at": {
+      "type": "date"
+    },
+    "deleted_at": {
+      "type": "date"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "order": {
+      "type": "hasMany",
+      "model": "companyOrder",
+      "foreignKey": "company_id"
+    },
+    "sn": {
+      "type": "hasMany",
+      "model": "companySn",
+      "foreignKey": "company_id"
+    },
+
+    "companyMonthly": {
+      "type": "hasMany",
+      "model": "companyMonthly",
+      "foreignKey": "company_id"
+    },
+    "companyDaily": {
+      "type": "hasMany",
+      "model": "companyDaily",
+      "foreignKey": "company_id"
+    },
+    "companyInstall": {
+      "type": "hasMany",
+      "model": "companyInstall",
+      "foreignKey": "company_id"
+    },
+
+    "versionMonthly": {
+      "type": "hasMany",
+      "model": "versionMonthly",
+      "foreignKey": "company_id"
+    },
+    "versionDaily": {
+      "type": "hasMany",
+      "model": "versionDaily",
+      "foreignKey": "company_id"
+    }
+
+  },
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "DENY"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW"
+    }
+  ],
+  "methods": {}
+}

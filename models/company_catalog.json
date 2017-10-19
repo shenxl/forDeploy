@@ -1,0 +1,39 @@
+{
+  "name": "companyCatalog",
+  "plural": "companyCatalogs",
+  "base": "PersistedModel",
+  "options": {
+    "idInjection": true,
+    "mysql": {
+      "table": "company_catalog"
+    }
+  },
+  "properties": {
+    "id":{
+      "type": "number",
+      "required": true
+    },
+    "catalog": {
+      "type": "string",
+      "required": true
+    },
+    "type": {
+      "type": "string",
+      "required": true
+    },
+    "industry": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [
+  {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW"
+    }
+  ],
+  "methods": {}
+}

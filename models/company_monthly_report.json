@@ -1,0 +1,83 @@
+{
+  "name": "companyMonthlyReport",
+  "plural": "companyMonthlyReports",
+  "base": "PersistedModel",
+  "idInjection": false,
+  "options": {
+    "validateUpsert": true,
+    "mysql": {
+      "table": "v_company_monthly_report"
+    }
+  },
+  "properties": {
+    "company_id": {
+      "type": "number",
+      "required": true,
+      "id": true
+    },
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "region": {
+      "type": "string"
+    },
+    "province": {
+      "type": "string"
+    },
+    "city": {
+      "type": "string"
+    },
+    "county": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string"
+    },
+    "industry": {
+      "type": "string"
+    },
+    "important": {
+      "type": "string"
+    },
+    "server_id": {
+      "type": "number",
+      "id": true
+    },
+    "year": {
+      "type": "number",
+      "id": true
+    },
+    "month": {
+      "type": "number",
+      "id": true
+    },
+    "activity_sum": {
+      "type": "number"
+    },
+    "activity_avg": {
+      "type": "number"
+    },
+    "install_sum": {
+      "type": "number"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "DENY"
+    },
+    {
+      "accessType": "READ",
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW",
+      "property": "data"
+    }
+  ],
+  "methods": {}
+}

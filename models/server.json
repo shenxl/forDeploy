@@ -1,0 +1,81 @@
+{
+  "name": "server",
+  "plural": "servers",
+  "base": "PersistedModel",
+  "options": {
+    "idInjection": true,
+    "mysql": {
+      "table": "server"
+    }
+  },
+  "properties": {
+    "id": {
+      "type": "number",
+      "required": true
+    },
+    "company_id": {
+      "type": "number",
+      "required": true
+    },
+    "ip": {
+      "type": "string",
+      "required": true
+    },
+    "type": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "string"
+    },
+    "created_at": {
+      "type": "date"
+    },
+    "updated_at": {
+      "type": "date"
+    },
+    "deleted_at": {
+      "type": "date"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "versionMonthly": {
+      "type": "hasMany",
+      "model": "versionMonthly",
+      "foreignKey": "server_id"
+    },
+    "versionDaily": {
+      "type": "hasMany",
+      "model": "versionDaily",
+      "foreignKey": "server_id"
+    },
+    "companyMonthly": {
+      "type": "hasMany",
+      "model": "companyMonthly",
+      "foreignKey": "server_id"
+    },
+    "companyDaily": {
+      "type": "hasMany",
+      "model": "companyDaily",
+      "foreignKey": "server_id"
+    },
+    "versionDaily": {
+      "type": "hasMany",
+      "model": "versionDaily",
+      "foreignKey": "server_id"
+    },
+    "versionMonthly": {
+      "type": "hasMany",
+      "model": "versionMonthly",
+      "foreignKey": "server_id"
+    },
+    "companyInstall": {
+      "type": "hasMany",
+      "model": "companyInstall",
+      "foreignKey": "server_id"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

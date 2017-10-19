@@ -1,0 +1,85 @@
+{
+  "name": "companyViewer",
+  "plural": "companyViewers",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true,
+    "mysql": {
+      "table": "v_company_table_data"
+    }
+  },
+  "properties": {
+    "id": {
+      "type": "number",
+      "required": true
+    },
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "region": {
+      "type": "string"
+    },
+    "province": {
+      "type": "string"
+    },
+    "city": {
+      "type": "string"
+    },
+    "county": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string"
+    },
+    "industry": {
+      "type": "string"
+    },
+    "important": {
+      "type": "string"
+    },
+    "buy": {
+      "type": "number"
+    },
+    "year": {
+      "type": "number"
+    },
+    "month": {
+      "type": "number"
+    },
+    "total": {
+      "type": "number"
+    },
+    "activity_sum": {
+      "type": "number"
+    },
+    "activity_avg": {
+      "type": "number"
+    },
+    "install_sum": {
+      "type": "number"
+    },
+    "server_token": {
+      "type": "number"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [
+  {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "DENY"
+    },
+    {
+      "accessType": "READ",
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW",
+      "property": "getRecord"
+    }
+  ],
+  "methods": {}
+}

@@ -1,0 +1,59 @@
+{
+  "name": "globalRegion",
+  "plural": "globalRegions",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "idInjection": true,
+    "mysql": {
+      "table": "global_region"
+    }
+  },
+  "properties": {
+    "ID": {
+      "type": "number",
+      "required": true
+    },
+    "Name": {
+      "type": "string",
+      "required": true
+    },
+    "ParentId": {
+      "type": "number"
+    },
+    "ShortName": {
+      "type": "string"
+    },
+    "LevelType": {
+      "type": "number"
+    },
+    "CityCode": {
+      "type": "number"
+    },
+    "ZipCode": {
+      "type": "number"
+    },
+    "MergerName": {
+      "type": "string"
+    },
+    "lng": {
+      "type": "number"
+    },
+    "Lat": {
+      "type": "number"
+    },
+    "Pinyin": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "region": {
+      "type": "hasMany",
+      "model": "globalRegion",
+      "foreignKey": "ParentId"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}
